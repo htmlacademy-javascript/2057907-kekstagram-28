@@ -8,7 +8,7 @@ const checkPalindrome = (string) => {
     reverseString += string[i];
   }
   return string === reverseString;
-}
+};
 checkPalindrome('довОд');
 
 const checkNumber = (string) => {
