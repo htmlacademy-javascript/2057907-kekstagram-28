@@ -53,6 +53,7 @@ const generateCommentsAvatar = createRandomIdFromRangeGenerator(1, 6);
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
 const SIMILAR_COMMENTS_COUNT = 3;
+const SIMILAR_PHOTO_DESCRIPTION = 25;
 
 const createComments = () => ({
   id: generateCommentsId(),
@@ -72,5 +73,6 @@ const createPhotoDescription = () => ({
   comments: similarComments,
 });
 
-createPhotoDescription();
+const similarPhotoDescription = Array.from({length: SIMILAR_PHOTO_DESCRIPTION}, createPhotoDescription);
 
+console.log(similarPhotoDescription);
