@@ -58,7 +58,7 @@ const generatePhotoId = createRandomIdFromRangeGenerator(MIN_PHOTO_ID_COUNT, MAX
 const generatePhotoUrl = createRandomIdFromRangeGenerator(MIN_PHOTO_URL_COUNT, MAX_PHOTO_URL_COUNT);
 const generateLikesCount = createRandomIdFromRangeGenerator(MIN_LIKES_COUNT, MAX_LIKES_COUNT);
 const generateCommentId = createRandomIdFromRangeGenerator(MIN_COMMENTS_ID_COUNT, MAX_COMMENTS_ID_COUNT);
-const generateCommentAvatarUrl = createRandomIdFromRangeGenerator(MIN_AVATAR_COMMENTS_URL_COUNT, MAX_AVATAR_COMMENTS_URL_COUNT);
+const generateCommentAvatarUrl = () => getRandomInteger(MIN_AVATAR_COMMENTS_URL_COUNT, MAX_AVATAR_COMMENTS_URL_COUNT);
 
 function getRandomInteger (min, max) {
   const lower = Math.ceil(Math.min(Math.abs(min), Math.abs(max)));
@@ -91,4 +91,4 @@ const createPhotoDescription = () => ({
 
 const getPhotoDescription = () => Array.from({length: SIMILAR_PHOTO_DESCRIPTIONS_COUNT}, createPhotoDescription);
 
-getPhotoDescription();
+console.log(getPhotoDescription());
