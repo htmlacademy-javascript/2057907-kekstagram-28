@@ -65,6 +65,6 @@ const createPhotoDescription = () => ({
   comments: Array.from({length: getRandomInteger(MIN_COMMENTS_COUNT, MAX_COMMENTS_COUNT)}, createComment)
 });
 
-const getPhotoDescription = () => Array.from({length: SIMILAR_PHOTO_DESCRIPTIONS_COUNT}, createPhotoDescription);
+const getPhotoDescriptions = () => Array.from({length: SIMILAR_PHOTO_DESCRIPTIONS_COUNT}, createPhotoDescription);
 
-export {getPhotoDescription};
+export {getPhotoDescriptions};
