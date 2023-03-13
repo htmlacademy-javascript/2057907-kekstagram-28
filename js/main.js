@@ -1,3 +1,6 @@
-import {getPhotoDescription} from './data.js';
+import {getPhotoDescriptions} from './data.js';
+import {drawPhotos} from './thumbnail.js';
 
-console.log(getPhotoDescription());
+
+const photoDescriptions = getPhotoDescriptions();
+drawPhotos(photoDescriptions);
