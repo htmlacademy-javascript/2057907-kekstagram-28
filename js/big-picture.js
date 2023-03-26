@@ -39,8 +39,10 @@ const createComments = () => {
   commentsShown = Math.min(comments.length, commentsShown + COMMENTS_PER_PORTION);
   if (commentsShown >= comments.length) {
     commentsLoader.classList.add('hidden');
+    commentsLoader.removeEventListener('click', createComments);
   } else {
     commentsLoader.classList.remove('hidden');
+    commentsLoader.addEventListener('click', createComments);
   }
 
   const fragment = document.createDocumentFragment();
@@ -51,7 +53,7 @@ const createComments = () => {
 
   socialComments.innerHTML = '';
   socialComments.append(fragment);
-  socialCommentsCount.innerHTML = `${commentsShown} из <span class="comments-count">${comments.length}<span> комментариев</span>`;
+  socialCommentsCount.textContent = `${commentsShown} из ${comments.length} комментариев`;
 };
 
 const createBigPicture = ({url, likes, description}) => {
@@ -91,7 +93,5 @@ document.addEventListener('click', (evt) => {
 bigPictureCloseButton .addEventListener('click', () => {
   closeBigPicture();
 });
-
-commentsLoader.addEventListener('click', createComments);
 
 export {setPhotos};
