@@ -74,6 +74,7 @@ function closeBigPicture () {
   document.removeEventListener('keydown', onDocumentKeydown);
   document.body.classList.remove('modal-open');
   commentsShown = 0;
+  commentsLoader.removeEventListener('click', createComments);
 }
 
 document.addEventListener('click', (evt) => {
