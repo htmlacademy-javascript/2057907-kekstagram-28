@@ -52,7 +52,7 @@ const EFFECTS = [
 const DEFAULT_EFFECT = EFFECTS[0];
 let chosenEffect = DEFAULT_EFFECT;
 
-const uploadImage = document.querySelector('.img-upload__preview');
+const uploadImage = document.querySelector('.img-upload__preview img');
 const effects = document.querySelector('.effects');
 const slider = document.querySelector('.effect-level__slider');
 const sliderContainer = document.querySelector('.img-upload__effect-level');
@@ -84,7 +84,7 @@ const updateSlider = () => {
       min: chosenEffect.min,
       max: chosenEffect.max,
     },
-    step: chosenEffect.step,
+    start: chosenEffect.step,
   });
 
   if (isDefault()) {
