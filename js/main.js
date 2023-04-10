@@ -1,8 +1,10 @@
 import {drawPhotos} from './thumbnail.js';
 import {setUserFormSubmit, closeUploadModal} from './form.js';
 import {getData, sendData} from './api.js';
-import {showAlert} from './util.js';
+import {showAlert, debounce} from './util.js';
 import {showErrorMessage, showSuccessMessage} from './form-message.js';
+import {init, getSortedPictures} from './sort.js';
+import './avatar.js';
 
 
 setUserFormSubmit(async (data) => {
@@ -17,7 +19,9 @@ setUserFormSubmit(async (data) => {
 
 try {
   const data = await getData();
-  drawPhotos(data);
+  const debouncedDrawPhotos = debounce(drawPhotos);
+  init(data, debouncedDrawPhotos);
+  drawPhotos(getSortedPictures());
 } catch (err) {
   showAlert(err.message);
 }
