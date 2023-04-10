@@ -16,6 +16,7 @@ const createPhoto = ({url, likes, comments, description, id}) => {
 };
 
 const drawPhotos = (similarPictures) => {
+  pictures.querySelectorAll('.picture').forEach((element) => element.remove());
   const similarListFragment = document.createDocumentFragment();
   similarPictures.forEach((similarPicture) => {
     similarListFragment.appendChild(createPhoto(similarPicture));

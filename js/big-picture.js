@@ -90,7 +90,7 @@ document.addEventListener('click', (evt) => {
   }
 });
 
-bigPictureCloseButton .addEventListener('click', () => {
+bigPictureCloseButton.addEventListener('click', () => {
   closeBigPicture();
 });
 
