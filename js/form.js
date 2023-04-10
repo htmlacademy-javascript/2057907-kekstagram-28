@@ -29,6 +29,7 @@ const showUploadModal = () => {
   document.body.classList.add('modal-open');
   document.addEventListener('keydown', onDocumentKeydown);
   resetEffects();
+  pristine.validate();
 };
 
 const closeUploadModal = () => {
